@@ -5,7 +5,7 @@ and **no compiled code**. Nothing in your codebase can take a reference on it â€
 bytes, not a library.
 
 ```xml
-<PackageReference Include="VpnHood.Core.IpLocations.Assets.Ip2LocationLite" />
+<PackageReference Include="VpnHood.Net.IpLocations.Assets.Ip2LocationLite" />
 ```
 
 That is the whole integration. The package's targets place `IpLocations.zip` where your app's
