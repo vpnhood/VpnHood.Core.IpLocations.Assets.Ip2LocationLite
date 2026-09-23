@@ -20,7 +20,6 @@
   <PropertyGroup>
     <Description>The IP2Location LITE database (IP ranges for every country) as an inert asset package: the zip plus MSBuild targets that place it beside the consuming app. No compiled code, so Android carries it once rather than once per CPU architecture.</Description>
     <TargetFramework>net10.0</TargetFramework>
-    <PackageId>VpnHood.Core.IpLocations.Assets.Ip2LocationLite</PackageId>
     <IsPackable>true</IsPackable>
 
     <!-- Emit no assembly into the package and nothing to symbolize; compile no stray files; and do
