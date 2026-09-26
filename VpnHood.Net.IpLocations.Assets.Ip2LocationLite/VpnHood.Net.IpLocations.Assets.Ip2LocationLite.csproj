@@ -9,8 +9,8 @@
          buildTransitive/IpLocations.zip      the database: one stored entry per country ({code}.ips),
                                               plus _checksum.txt naming the build
          buildTransitive/<PackageId>.targets  places both where the consuming app's platform reads
-                                              files, at any reference depth
-         build/<PackageId>.targets            forwards to the above for a direct PackageReference
+                                              files, at any reference depth, a direct one included;
+                                              no build/ copy, which only NuGet before 5.0 would read
 
        Reading it is the consumer's: open "iplocations/IpLocations.zip" from wherever the targets
        placed it. That path is the whole contract between the targets and the consumer - there is no
@@ -50,7 +50,6 @@
   <ItemGroup>
     <None Include="Resources\IpLocations.zip" Pack="true" PackagePath="buildTransitive\IpLocations.zip" />
     <None Include="buildTransitive\VpnHood.Net.IpLocations.Assets.Ip2LocationLite.targets" Pack="true" PackagePath="buildTransitive\" />
-    <None Include="build\VpnHood.Net.IpLocations.Assets.Ip2LocationLite.targets" Pack="true" PackagePath="build\" />
     <!-- CC BY-SA 4.0 requires that the licence, the copyright notice and the disclaimer travel WITH
          the data. These are IP2Location's own files, verbatim; LICENSE points at them. -->
     <None Include="Licenses\LICENSE-CC-BY-SA-4.0.TXT" Pack="true" PackagePath="licenses\" />

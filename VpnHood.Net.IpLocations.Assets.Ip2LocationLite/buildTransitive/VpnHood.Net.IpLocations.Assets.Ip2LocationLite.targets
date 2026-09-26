@@ -6,9 +6,9 @@
 
 	     This file lives in buildTransitive/, not build/, on purpose: NuGet imports build/<PackageId>
 	     .targets only for a DIRECT PackageReference, while buildTransitive/<PackageId>.targets reaches
-	     a consumer at any depth. An app that references a library that references this package gets
-	     the database placed without naming it. build/<PackageId>.targets imports this one, so a direct
-	     reference runs the same file.
+	     a consumer at any depth, a direct one included. An app that references a library that
+	     references this package gets the database placed without naming it. There is no build/ copy:
+	     beside this file, one would be read only by NuGet before 5.0, which we don't support.
 
 	     Placed by an APP's build, never a library's: OutputType is the test below, because the
 	     database is 14.6 MB and a library that merely passes the reference along has no use for a copy
